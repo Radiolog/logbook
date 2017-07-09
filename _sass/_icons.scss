@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-logbook:before {
+  content: "\e899";
+
 .icon-power-cord:before {
   content: "\e914";
 }

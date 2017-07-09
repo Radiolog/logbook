@@ -60,7 +60,7 @@ var menu = d3.select("#menu select")
 .on("change", change);    
 
 //suck in the data, store it in a value called formatted, run the redraw function
-d3.csv("/recordsblog/public/data/google-trend/google-trend.csv", function(data) {
+d3.csv("/logbook/public/data/google-trend/google-trend.csv", function(data) {
 formatted = data;
 redraw();
 });
