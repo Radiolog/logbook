@@ -16,7 +16,7 @@ A real forecaster may not like this quotation because it expresses that forecast
 
 The aim of this post is to estimate different models to forecast Swiss GDP growth after an appreciation of 15% of the CHF vis-à-vis the EUR as it was the case when the SNB repealed the minimum rate. The models predict considerably lower GDP growth which confirmed that the models reflect the negative relationship between GDP growth and the exchange rate. In fact an ARMAX- and a VARMAX model are elaborated. The results show that both types of models exhibit quite reasonable predictive power. 
 
-This estimation is done with the SARIMAX and the VARMAX routines of [Statsmodels](www.statsmodels.org). This jupyter notebook can be [downloaded from github](https://github.com/burrim/recordsblog/blob/gh-pages/blog-notebooks/Forecasting-Swiss-GDP-Growth-with-Statsmodels.ipynb).
+This estimation is done with the SARIMAX and the VARMAX routines of [Statsmodels](www.statsmodels.org). This jupyter notebook can be [downloaded from github](https://github.com/mxbu/logbook/blob/gh-pages/blog-notebooks/Forecasting-Swiss-GDP-Growth-with-Statsmodels.ipynb).
 First of all we import some packages and load the data, which can be found on the database of the St. Louis Fred and the OECD. In fact the VARMAX model contains besides Swiss GDP growth also inflation, unemployment rate, exports growth, a shorter and a longer yield spread. The exogenous data contains lagged GDP of the Euro Area and lagged CHF/EUR exchangerate. Conducting Granger Causality tests shows that from a statistically point of view its justified to treat the exchange rate as exogenous which is an assumption that is often used when forecasting GDP growth in a small open economy, although it does not make a lot of sense economically.  Economically it can reasonably be assumed that Euro Area GDP growth is exogenous to Swiss GDP growth because Switzerland is a small open economy and thus is unlikely to affect GDP growth in the EU. 
 
 {% capture content %}{% highlight python %}
@@ -53,7 +53,7 @@ fig1 = sm.graphics.tsa.plot_pacf(SwissGDP, lags=6, ax=ax2)
 plt.show(fig1)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[2]:" content=content type='input' %}
-![png](/recordsblog/public/img/forecasting/image1.png)
+![png](/logbook/public/img/forecasting/image1.png)
 
 The figure above shows the ACF and the PACF of Swiss GDP growth. The ACF is significantly different from zero up to two lags while the PACF is only significantly different from zero for lag one. Therefore, p = 4 and q = 4 should be according to Box and Jenkins (1976) an appropriate maximum order for the ARMAX(p,q) model. In an automated procedure several information criteria are calculated to trade-off explanatory power with parsimony.
 
@@ -175,7 +175,7 @@ Prob(H) (two-sided):                  0.01   Kurtosis:                         5
 Warnings:
 [1] Covariance matrix calculated using the outer product of gradients (complex-step).
 </pre>
-![png](/recordsblog/public/img/forecasting/image2.png)
+![png](/logbook/public/img/forecasting/image2.png)
 
 The residual plot suggest that the ARMA model fits pretty well. The fitted values track the actual values and even cover the recession during the financial crisis. The residuals look reasonably independent and identically distributed (i.i.d.) according to the ACF and also resemble a normal distribution. By looking at the ACF of the residuals it’s observable that there are no lags which are autocorrelated.
 
@@ -232,7 +232,7 @@ ax.set(title='ARMAX - Forecasting Swiss GDP');
 plt.show(fig3)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[6]:" content=content type='input' %}
-![png](/recordsblog/public/img/forecasting/image3.png)
+![png](/logbook/public/img/forecasting/image3.png)
 
 We see this scenario predicts Swiss GDP to be considerably lower because of the appreciation. This reflects the positive relationship between a depreciation and GDP growth. Therefore, an appreciation of the swiss franc vis-à-vis the euro leads to lower Swiss GDP growth.
 
@@ -499,7 +499,7 @@ sqrt.var.Longspread                   0.3893      0.135      2.883      0.004   
 Warnings:
 [1] Covariance matrix calculated using the outer product of gradients (complex-step).
 </pre>
-![png](/recordsblog/public/img/forecasting/image4.png)
+![png](/logbook/public/img/forecasting/image4.png)
 
 The residual diagnostics plot looks quite similar to the one of the ARMAX model, therefore we conclude same things as above.
 
@@ -543,7 +543,7 @@ ax.set(title='VARMAX - Forecasting Swiss GDP');
 plt.show(fig5)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[9]:" content=content type='input' %}
-![png](/recordsblog/public/img/forecasting/image5.png)
+![png](/logbook/public/img/forecasting/image5.png)
 
 
 [^1]: Solomon, E. (1984): “Psychology Today,” also attributed to John Kenneth Galbraith in U.S. News and World Report (7 March 1988), p. 64.

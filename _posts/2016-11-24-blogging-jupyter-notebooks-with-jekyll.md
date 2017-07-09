@@ -8,7 +8,7 @@ description: This post shows how to convert a jupyter notebook to a jekyll blog 
 ---
 While writing the [last blog post](https://burrim.github.io/recordsblog/2016/11/19/optimization/), i was wondering wether it's possible to convert a whole jupyter notebook to a jekyll blog post. So, I googled and found a good post on [this blog](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), which suggests to use the command `nbconvert` to convert the notebook to a markdown file . It's a very easy and convenient way, although there are some issues which let me digging deeper into this topic and finally were the reason for me not to choose this way to convert my notebooks. But later more on that.
 
-If you have the following jupyter notebook called [`nbexample.ipynb`](https://github.com/burrim/recordsblog/blob/gh-pages/blog-notebooks/nbexample.ipynb) and want to convert it, you only need to run the command
+If you have the following jupyter notebook called [`nbexample.ipynb`](https://github.com/mxbu/logbook/blob/gh-pages/blog-notebooks/nbexample.ipynb) and want to convert it, you only need to run the command
 
 
 ```
@@ -141,12 +141,12 @@ ax.plot(t, t, color='blue', lw=3);
 show(fig)
 ```
 
-![png](/recordsblog/public/img/nbexample/image2.png)
+![png](/logbook/public/img/nbexample/image2.png)
 
 <hr>
 
 
-What I was missing in the above conversion were the classical `In [1]:` and `Out[1]:` prompts of jupyter notebooks. So, how is this achievable? As Adam J. writes on [his blog](https://adamj.eu/tech/2014/09/21/using-ipython-notebook-to-write-jekyll-blog-posts/), `.ipynb` files are stored in the `json` format. And indeed if you look at the [raw content](https://raw.githubusercontent.com/burrim/jupyter-notebooks/master/nbexample.ipynb) of the `nbexample.ipynb` you see something like this:
+What I was missing in the above conversion were the classical `In [1]:` and `Out[1]:` prompts of jupyter notebooks. So, how is this achievable? As Adam J. writes on [his blog](https://adamj.eu/tech/2014/09/21/using-ipython-notebook-to-write-jekyll-blog-posts/), `.ipynb` files are stored in the `json` format. And indeed if you look at the [raw content](https://raw.githubusercontent.com/mxbu/jupyter-notebooks/master/nbexample.ipynb) of the `nbexample.ipynb` you see something like this:
 
 ```{
  "cells": [
@@ -297,7 +297,7 @@ axes[3].set_title("fill_between");
 show(fig)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[3]:" content=content type='input' %}
-![png](/recordsblog/public/img/nbexample/image1.png)
+![png](/logbook/public/img/nbexample/image1.png)
 
 {% capture content %}{% highlight python %}
 # polar plot using add_axes and polar projection
@@ -308,4 +308,4 @@ ax.plot(t, t, color='blue', lw=3);
 show(fig)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[4]:" content=content type='input' %}
-![png](/recordsblog/public/img/nbexample/image2.png)
+![png](/logbook/public/img/nbexample/image2.png)

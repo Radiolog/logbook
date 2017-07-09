@@ -17,7 +17,7 @@ I was wondering why there are so few apps to trade cryptocurrencies at the krake
 I don't want to comment on the whole code step by step, I'd rather discuss the key prerequisites to run the code and explain the app by means of some pictures. At the end of this post you will find the app-code, hence you can go through it by yourself if you like. 
 
 # What you need to run the app
-Besides the standard python modules like matplotlib, tkinter, datetime or pandas you will also need to install the [mpl_finance](https://github.com/matplotlib/mpl_finance) module to plot the candlesticks, the [TA-Lib](https://github.com/mrjbq7/ta-lib) module to compute some technical financial indicators and the [krakenex](https://github.com/veox/python3-krakenex) module to connect to the kraken exchange via the API. Then you will also need to install the [arctic](https://github.com/manahl/arctic) module which uses mongodb to store the data. Install instructions and more can be found on their page. Before we can read from or write data to the database, which by the way is explained in the [last post](https://burrim.github.io/recordsblog/2017/06/04/use-arctic-to-create-cryptocurrency-database/), mongodb must be started. This is done by the following command (For Mac OSX users, for others this could be different):
+Besides the standard python modules like matplotlib, tkinter, datetime or pandas you will also need to install the [mpl_finance](https://github.com/matplotlib/mpl_finance) module to plot the candlesticks, the [TA-Lib](https://github.com/mrjbq7/ta-lib) module to compute some technical financial indicators and the [krakenex](https://github.com/veox/python3-krakenex) module to connect to the kraken exchange via the API. Then you will also need to install the [arctic](https://github.com/manahl/arctic) module which uses mongodb to store the data. Install instructions and more can be found on their page. Before we can read from or write data to the database, which by the way is explained in the [last post](https://mxbu.github.io/logbook/2017/06/04/use-arctic-to-create-cryptocurrency-database/), mongodb must be started. This is done by the following command (For Mac OSX users, for others this could be different):
 
 {% highlight python %}
 import subprocess
@@ -27,47 +27,47 @@ subprocess.Popen(['/usr/local/bin/mongod', '--dbpath', '/users/'+os.getlogin()+'
 
 Let's now have a look at the app's start page:
 <div class="popup-gallery">
-<a href="/recordsblog/public/img/kraken-app/01.png" title=" Start Page"><img src="/recordsblog/public/img/kraken-app/01.png"></a>
+<a href="/logbook/public/img/kraken-app/01.png" title=" Start Page"><img src="/logbook/public/img/kraken-app/01.png"></a>
 </div>
 There you have several possibilities. First, click "Update" to update the database to the latest available date, click "Skip" to continue with the data already contained in the database or click "Get Info" to look into the databse and get the latest import dates for each item therein. If you click on "Update" or "Skip" the command mentioned above will be executed and then you will be directed to the Graph Page:  
 <div class="popup-gallery">
-<a href="/recordsblog/public/img/kraken-app/02.png" title=" BTC/EUR data with volume"><img src="/recordsblog/public/img/kraken-app/02.png"></a>
+<a href="/logbook/public/img/kraken-app/02.png" title=" BTC/EUR data with volume"><img src="/logbook/public/img/kraken-app/02.png"></a>
 </div>
 In the menubar you have again several possibilities. You can change the pair, the time frame or the OHLC interval. Then you can add several technical financial indicators by clicking on Top or Main Indicator. This will open a popup window where you can specifiy the number of periods you want to consider. The following for example is for the MACD: 
 <center>
 <div class="popup-gallery">
-<a href="/recordsblog/public/img/kraken-app/03.png" title="Popup Window to specify the MACD indicator"><img src="/recordsblog/public/img/kraken-app/03.png"></a>
+<a href="/logbook/public/img/kraken-app/03.png" title="Popup Window to specify the MACD indicator"><img src="/logbook/public/img/kraken-app/03.png"></a>
 </div>
 </center>
 This generates the following graph:
 <div class="popup-gallery">
-<a href="/recordsblog/public/img/kraken-app/04.png" title=" Candlestick chart with several indicators"><img src="/recordsblog/public/img/kraken-app/04.png"></a>
+<a href="/logbook/public/img/kraken-app/04.png" title=" Candlestick chart with several indicators"><img src="/logbook/public/img/kraken-app/04.png"></a>
 </div>
 Another possibility is to have a look at the market depth:
 <div class="popup-gallery">
-<a href="/recordsblog/public/img/kraken-app/05.png" title="BTC/EUR market depth"><img src="/recordsblog/public/img/kraken-app/05.png"></a>
+<a href="/logbook/public/img/kraken-app/05.png" title="BTC/EUR market depth"><img src="/logbook/public/img/kraken-app/05.png"></a>
 </div>
 Or look at the tick data live graph: 
 <div class="popup-gallery">
-<a href="/recordsblog/public/img/kraken-app/06.png" title="Live graph of the lates few trades"><img src="/recordsblog/public/img/kraken-app/06.png"></a>
+<a href="/logbook/public/img/kraken-app/06.png" title="Live graph of the lates few trades"><img src="/logbook/public/img/kraken-app/06.png"></a>
 </div>
 
 In the menubar you can click "Trading" which opens the options of a quick buy/sell or to begin automated trading. The quick buy/sell option is not live yet but this would be easy to implement. A simple automated trading strategy is implemented here but only for the XXBTZEUR pair and it's only to show the mechanism behind. It's a simple moving average strategy, which runs every hour, computes the moving averages and executes the appropriate commands. 
 
-You now have some impressions what is possible to do with this app. The best, you go now through the code at the bottom of this post, if you are interested on how something is implemented. If you have some remarks or suggestions for improvement, you can write a comment below or the [gist on GitHub](https://gist.github.com/burrim/a0b13ac7b8e09f7b8684d878c4dd646f). 
+You now have some impressions what is possible to do with this app. The best, you go now through the code at the bottom of this post, if you are interested on how something is implemented. If you have some remarks or suggestions for improvement, you can write a comment below or the [gist on GitHub](https://gist.github.com/mxbu/a0b13ac7b8e09f7b8684d878c4dd646f). 
 
 
 
 
-<link rel="stylesheet" href="/recordsblog/public/css/kraken-app/magnific-popup.css">
+<link rel="stylesheet" href="/logbook/public/css/kraken-app/magnific-popup.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="/recordsblog/public/js/kraken-app/jquery.magnific-popup.min.js"></script>
-<script src="/recordsblog/public/js/kraken-app/gallery.js"></script>
+<script src="/logbook/public/js/kraken-app/jquery.magnific-popup.min.js"></script>
+<script src="/logbook/public/js/kraken-app/gallery.js"></script>
 
 
 
 
-Here is the code for the app and also the file called `getkrkendata.py`, which contains some functions to help importing the data from the kraken API. These files can also be found on [GitHub](https://gist.github.com/burrim/a0b13ac7b8e09f7b8684d878c4dd646f):
+Here is the code for the app and also the file called `getkrkendata.py`, which contains some functions to help importing the data from the kraken API. These files can also be found on [GitHub](https://gist.github.com/mxbu/a0b13ac7b8e09f7b8684d878c4dd646f):
 
 `kraken-app.py`:
 {% highlight python %}
@@ -976,7 +976,7 @@ app.mainloop()
 """
 Created on Fri Apr 14 13:08:38 2017
 
-@author: burrim
+@author: mxbu
 """
 import urllib
 import json

@@ -6,7 +6,7 @@ comments: true
 description: In today's post I want to examine whether Google Trend data has predictive power for cryptocurrencies. That, by carry out some VARs. The results are not really meaningful, maybe due to the reason that a price cannot really be forecasted by the amount of google searches, however we see how to use the pytrends package.
 date:  2017-01-12 20:14:07
 ---
-In today's post I want to examine whether Google Trend data has predictive power for cryptocurrencies. That, by carry out some VARs. The corresponding jupyter notebook can be [downloaded from github.](https://github.com/burrim/recordsblog/blob/gh-pages/blog-notebooks/google-trend.ipynb) This includes the use of pytrends to import google trend data into python. The Prices of the cryptocurrencies(here Bitcoin/EUR, Ethereum/BTC and Zcash/BTC) are taken from quandl with the use of the quandl API for python. So let's start importing the necessary packages.
+In today's post I want to examine whether Google Trend data has predictive power for cryptocurrencies. That, by carry out some VARs. The corresponding jupyter notebook can be [downloaded from github.](https://github.com/mxbu/logbook/blob/gh-pages/blog-notebooks/google-trend.ipynb) This includes the use of pytrends to import google trend data into python. The Prices of the cryptocurrencies(here Bitcoin/EUR, Ethereum/BTC and Zcash/BTC) are taken from quandl with the use of the quandl API for python. So let's start importing the necessary packages.
 
 {% capture content %}{% highlight python %}
 from pytrends.request import TrendReq
@@ -61,7 +61,7 @@ ax.legend(list(gtrendall.columns),loc=2)
 plt.show(fig)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[4]:" content=content type='input' %}
-![png](/recordsblog/public/img/google-trend/image1.png)
+![png](/logbook/public/img/google-trend/image1.png)
 
 For the analysis we convert the prices to Euro and calculate growth rates of the google trend statistics:
 
@@ -172,7 +172,7 @@ ax[1].legend(['BTC/EUR'],loc=2)
 plt.show(fig)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[6]:" content=content type='input' %}
-![png](/recordsblog/public/img/google-trend/image2.png)
+![png](/logbook/public/img/google-trend/image2.png)
 
 {% capture content %}{% highlight python %}
 fig, ax = plt.subplots(2,figsize=(12,6))
@@ -185,7 +185,7 @@ ax[1].legend(['ETH/EUR'],loc=2)
 plt.show(fig)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[7]:" content=content type='input' %}
-![png](/recordsblog/public/img/google-trend/image3.png)
+![png](/logbook/public/img/google-trend/image3.png)
 
 {% capture content %}{% highlight python %}
 fig, ax = plt.subplots(2,figsize=(12,6))
@@ -198,7 +198,7 @@ ax[1].legend(['ZEC/EUR'],loc=2)
 plt.show(fig)
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[8]:" content=content type='input' %}
-![png](/recordsblog/public/img/google-trend/image4.png)
+![png](/logbook/public/img/google-trend/image4.png)
 
 Now let's try to quantify the connection between the google trends statistics growth rate and price of the currency. That is we estimate bivariate VARs of order 1. The following are the results of these VARs:
 

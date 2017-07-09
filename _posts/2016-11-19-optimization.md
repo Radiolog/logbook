@@ -21,7 +21,7 @@ from gurobipy import *
 {% endhighlight %}{% endcapture %}
 {% include notebook-cell.html execution_count="[1]:" content=content type='input' %}
 
-This post shows how we can optimize our portfolio using [Quandl](https://www.quandl.com), [Bokeh](http://bokeh.pydata.org/en/latest/) and [Gurobi](http://www.gurobi.com)[^1]. First of all, we need some data to proceed. The corresponding jupyter notebook [can be downloaded here.](https://github.com/burrim/recordsblog/blob/gh-pages/blog-notebooks/optimization.ipynb) For that purpose we use Quandl, more precisely you're going to need the quandl package. This isn't totally necessary, as pulling from the API is quite simple with or without the package, but it does make it a bit easier and knocks out a few steps. The Quandl package can be [downloaded here](https://github.com/quandl/quandl-python). If quandl is set up, next thing to do is to choose some stocks to import. The following is a random selection of american and erupean stocks. Note: `.4` in the quandl code specifies that we want the closed price.
+This post shows how we can optimize our portfolio using [Quandl](https://www.quandl.com), [Bokeh](http://bokeh.pydata.org/en/latest/) and [Gurobi](http://www.gurobi.com)[^1]. First of all, we need some data to proceed. The corresponding jupyter notebook [can be downloaded here.](https://github.com/mxbu/logbook/blob/gh-pages/blog-notebooks/optimization.ipynb) For that purpose we use Quandl, more precisely you're going to need the quandl package. This isn't totally necessary, as pulling from the API is quite simple with or without the package, but it does make it a bit easier and knocks out a few steps. The Quandl package can be [downloaded here](https://github.com/quandl/quandl-python). If quandl is set up, next thing to do is to choose some stocks to import. The following is a random selection of american and erupean stocks. Note: `.4` in the quandl code specifies that we want the closed price.
 
 {% capture content %}{% highlight python %}
 APIToken = "Your-API-Token"
@@ -251,9 +251,9 @@ You should see a graph here, if not, please <a  style="box-sizing: border-box; c
 <meta charset="utf-8">
 <title>Bokeh Plot</title>
 
-<link rel="stylesheet" href="/recordsblog/public/css/bokeh/bokeh.css" type="text/css" />
+<link rel="stylesheet" href="/logbook/public/css/bokeh/bokeh.css" type="text/css" />
 
-<script type="text/javascript" src="/recordsblog/public/js/optimization-bokeh/bokeh.min.js"></script>
+<script type="text/javascript" src="/logbook/public/js/optimization-bokeh/bokeh.min.js"></script>
 
 <script type="text/javascript">
 Bokeh.set_log_level("info");
@@ -276,7 +276,7 @@ margin: auto;
 <div class="plotdiv" id="f9ebb182-2c71-4a89-86f2-16a28620dc7d"></div>
 </div>
 
-<script>loadJSDeferred('/recordsblog/public/js/optimization-bokeh/bokeh01.js');</script>
+<script>loadJSDeferred('/logbook/public/js/optimization-bokeh/bokeh01.js');</script>
 
 </body>
 </html>

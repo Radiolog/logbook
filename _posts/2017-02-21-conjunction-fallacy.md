@@ -18,7 +18,7 @@ The most often-cited example of this fallacy originated with Amos Tversky and Da
 
 <div id="surveyContainer"></div>
 <div id="chartContainer"></div>
-<script type="text/javascript" src="/recordsblog/public/js/survey/survey.js"></script>
+<script type="text/javascript" src="/logbook/public/js/survey/survey.js"></script>
 
 The majority of those asked chose option 2. However, the probability of two events occurring together (in "conjunction") is always less than or equal to the probability of either one occurring alone—formally, for two events A and B this inequality could be written as 
 
