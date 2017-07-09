@@ -17,7 +17,7 @@ url:                 https://mxbu.github.io
 # i.e. `http://<username>.github.io`
 baseurl:             /logbook
 
-title:               logbook
+title:               logbooks
 
 # Pagination
 paginate:            5
