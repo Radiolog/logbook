@@ -1,0 +1,58 @@
+ div.cell {
+    page-break-inside: auto;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+
+.prompt {
+  min-width: 10ex;
+  padding: 0em;
+  margin: 0px 3px 0px 0px;
+  font-family: monospace;
+  font-size: 14px;    
+  text-align: left;
+  line-height: 1.21429em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+ white-space: nowrap;
+}
+
+div.prompt {
+  &.input-prompt {
+    color: #303F9F;
+    /*border-top: 1px solid transparent;*/
+  }
+  &.output-prompt {
+    color: #D84315;
+  }
+}
+
+
+  
+pre.stream {
+    font-family: 'Lucida Console', 'Monaco', monospace;
+    font-size: 12px;
+    color: #808080;
+    line-height: 1.2;
+    background-color: #fff;
+    padding: 0rem 0rem 0rem 1rem;
+    overflow-x: auto;
+   /* white-space: pre-wrap !important;  CSS 2.1 */
+
+  }

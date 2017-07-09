@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+{% assign tag = site.data.tags[page.tag] %}
+
+{% if tag %}
+  {% assign title = tag.name %}
+  {% assign description = tag.description %}
+  {% assign posts = site.tags[page.tag] %}
+{% else %}
+  {% assign title = page.title %}
+  {% assign description = page.description %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+<h1 class="page-title">{{ title }}</h1>
+
+{% if description %}
+  {% capture desc %}{{ description }}{:.message}{% endcapture %}
+  {{ desc | markdownify }}
+{% endif %}
+
+<hr/>
+
+{% for post in posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul><hr/>{% endunless %}
+    <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+    <ul class="related-posts">
+    {% assign date = currentdate %}
+  {% endif %}
+  {% include post-list-item.html post=post format="%m/%d" %}
+  {% if forloop.last %}</ul><hr/>{% endif %}
+{% endfor %}

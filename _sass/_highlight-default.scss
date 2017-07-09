@@ -1,0 +1,122 @@
+//colors
+$color_gallery_approx: #f0f0f0;
+$color_tundora_approx: #444;
+$color_suva_gray_approx: #888888;
+$color_red_berry_approx: #880000;
+$color_fuzzy_wuzzy_brown_approx: #bc6060;
+$color_asparagus_approx: #78a960;
+$color_green_leaf_approx: #397300;
+$color_matisse_approx: #1f7199;
+$color_hippie_blue_approx: #4d99bf;
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0em;
+	background: $color_gallery_approx;
+	color: $color_tundora_approx;
+}
+.hljs-subst {
+	color: $color_tundora_approx;
+}
+.hljs-comment {
+	color: $color_suva_gray_approx;
+}
+.hljs-keyword {
+	font-weight: bold;
+}
+.hljs-attribute {
+	font-weight: bold;
+}
+.hljs-selector-tag {
+	font-weight: bold;
+}
+.hljs-meta-keyword {
+	font-weight: bold;
+}
+.hljs-doctag {
+	font-weight: bold;
+}
+.hljs-name {
+	font-weight: bold;
+}
+.hljs-type {
+	color: $color_red_berry_approx;
+}
+.hljs-string {
+	color: $color_red_berry_approx;
+}
+.hljs-number {
+	color: $color_red_berry_approx;
+}
+.hljs-selector-id {
+	color: $color_red_berry_approx;
+}
+.hljs-selector-class {
+	color: $color_red_berry_approx;
+}
+.hljs-quote {
+	color: $color_red_berry_approx;
+}
+.hljs-template-tag {
+	color: $color_red_berry_approx;
+}
+.hljs-deletion {
+	color: $color_red_berry_approx;
+}
+.hljs-title {
+	color: $color_red_berry_approx;
+	font-weight: bold;
+}
+.hljs-section {
+	color: $color_red_berry_approx;
+	font-weight: bold;
+}
+.hljs-regexp {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-symbol {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-variable {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-template-variable {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-link {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-selector-attr {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-selector-pseudo {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.hljs-literal {
+	color: $color_asparagus_approx;
+}
+.hljs-built_in {
+	color: $color_green_leaf_approx;
+}
+.hljs-bullet {
+	color: $color_green_leaf_approx;
+}
+.hljs-code {
+	color: $color_green_leaf_approx;
+}
+.hljs-addition {
+	color: $color_green_leaf_approx;
+}
+.hljs-meta {
+	color: $color_matisse_approx;
+}
+.hljs-meta-string {
+	color: $color_hippie_blue_approx;
+}
+.hljs-emphasis {
+	font-style: italic;
+}
+.hljs-strong {
+	font-weight: bold;
+}

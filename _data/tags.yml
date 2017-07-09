@@ -1,0 +1,71 @@
+# Add an entry, where the key represents a slug.
+# Provide at least a `name` value and optionally `image`, `color` and `description`.
+# Markdown is enabled for `description`, however don't use more than one paragraph (enforced by `>`)
+#
+# Example:
+#
+# ~~~
+# mytag:
+#   name: My Tag
+#   description: >
+#     *My Tag* is an example of how to define a custom tag.
+# ~~~
+
+economics:
+  name: Economics
+  image: 
+  color: '#949667'
+  description: >
+   If you owe your bank a hundred pounds, you have a problem. But if you owe a million, it has.  
+    - John Maynard Keynes
+  order: 1
+
+python:
+  name: Python
+  image: 
+  color: '#1e415e'
+  description: >
+    Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Python is powerful, fast, friendly, easy to learn (what i'm actually trying to do) and it's open.
+  order: 2
+  
+random:
+  name: Random
+  image: 
+  color: '#474949'
+  description: >
+    The random tag contains all posts not related to Economics or Python. This could be everything and anything.
+  order: 3
+  
+  
+jupyter:
+  name: Jupyter
+  image: 
+  color: '#072942'
+  description: > 
+    The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Here these Notebooks are used to write some of the blog posts.
+  order: 4  
+
+  
+jekyll:
+  name: Jekyll
+  image: 
+  color: '#072942'
+  description: >
+    Jekyll is a simple, blog-aware, static site generator for personal, project, or organization sites. Here it's used for this blog. A nice thing is that jekyll sites can be hosted on GitHub Pages for free.
+  order: 4
+  
+d3:
+  name: D3
+  image: 
+  color: '#072942'
+  description: >
+    D3 is a JavaScript library for visualizing data with HTML, SVG, and CSS.
+  order: 3  
+  
+cryptocurrency:
+  name: Cryptocurrency
+  image: 
+  color: '#072942'
+  description: >
+    a digital asset designed to work as a medium of exchange using cryptography to secure the transactions and to control the creation of additional units of the currency.
+  order: 4

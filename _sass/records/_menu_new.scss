@@ -1,0 +1,61 @@
+.menu /*, .status*/ {
+  display: block;
+  padding: 0rem 0rem;
+  color: #9a9a9a;
+  border-bottom: none;
+  position: fixed;
+    
+
+}
+
+.menu {
+  left: 15rem;
+  z-index: 2;
+}
+
+// .status {
+//   right: 0;
+//   z-index: 1;
+// }
+
+// #_error, #_loading {
+//   display: none;
+//   visibility: hidden;
+//   line-height: 1.65;
+// }
+
+@media (min-width: 50em) {
+  .menu {
+      cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+    position: fixed;
+    left: 275px; 
+    &:focus {
+      left: 19.5rem;
+    }
+  }
+}
+
+@media (min-width: 64em) {
+    cursor: pointer;
+  .menu:focus {
+    left: 21.5rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .menu {
+    background: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    font-size: 30px;
+    padding:5px;    
+    line-height: 1;  
+    position:fixed;
+    bottom: 0rem;  
+    left: 1rem; 
+    &:focus {
+      left: 19.5rem;
+    }
+  }
+}

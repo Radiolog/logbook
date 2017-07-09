@@ -1,0 +1,20 @@
+<y-drawer>
+  <header id="_sidebar" class="sidebar" role="banner">
+    <div id="_asidebar" class="container sidebar-sticky">
+      <div class="sidebar-about">
+        <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+        {{ site.description | markdownify }}
+      </div>
+
+      <nav class="sidebar-nav" role="navigation">
+        {% include nav.html %}
+      </nav>
+
+      {% if site.author.social %}
+      <div class="sidebar-social">
+        {% include social.html social=site.author.social %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+</y-drawer>

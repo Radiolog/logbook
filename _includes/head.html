@@ -1,0 +1,55 @@
+<head>
+  <meta name="google-site-verification" content="QgO5h37He5RND3g_mBFnsmp7LB7BG_EPw18kUspuIv4" />    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{% if page.tag %}{{ site.data.tags[page.tag].name }}{% else %}{{ page.title }}{% endif %} &middot; {{ site.title }}{% endif %}</title>
+  {% if page.description %}
+  {% capture desc %}{{ page.description }}{% endcapture %}
+  <meta name="description" content="{{ desc | markdownify | strip_html | truncatewords: 50 }}">
+  {% else %}{% if page.excerpt %}
+  <meta name="description" content="{{ page.excerpt | strip_html | truncatewords: 50 }}">
+  {% endif %}{% endif %}
+    
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Feed" href="{{ site.url}}/recordsblog/atom.xml" />        
+  <!--[if gt IE 8]><!---->
+  <style>
+    {% capture include_to_scssify %}
+    {% include styles/essentials.scss %}
+    {% endcapture %}
+    {{ include_to_scssify | scssify }}
+  </style>
+
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/non-essentials.css">
+
+    {% if site.load_google_fonts %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ site.load_google_fonts }}">
+    {% endif %}
+
+    {% if site.author.social %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/icons.css">
+    {% endif %}
+  </noscript>
+
+  <link rel="preload" href="{{ site.baseurl }}/public/css/non-essentials.css" as="style" onload="this.rel='stylesheet'">
+  <!--<![endif]-->
+
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Atom Feed" href="{{ site.baseurl }}/atom.xml">
+
+    
+  <script>{% include scripts/load-js-deferred.js %}</script>
+  <script>window.site = {
+    url: '{{ site.url }}',
+    baseurl: '{{ site.baseurl }}'
+  }</script>
+
+  <!--[if lt IE 9]>
+  <script src="https://unpkg.com/html5shiv/dist/html5shiv.min.js"></script>
+  <![endif]-->
+
+   
+        
+{% seo %}
+</head>

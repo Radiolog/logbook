@@ -1,0 +1,20 @@
+<h2 class="sr-only">Pagination</h2>
+<nav class="pagination" role="navigation">
+  <ul>
+      <li class="pagination-item older" >
+        {% if page.previous.url %}
+            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+      {% else %}
+      <span>Previous Post</span>
+        {% endif %}
+        </li>
+        <li class="pagination-item newer" >
+        {% if page.next.url %}
+            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+      {% else %}
+      <span>Next Post</span>
+        {% endif %}
+        </li>
+    </ul>
+</nav>
+<hr>

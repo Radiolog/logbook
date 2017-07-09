@@ -1,0 +1,24 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+    {% include menu.html %}
+
+    <y-push-state replace-ids="_main,_asidebar" link-selector="a[href^='/']" scroll-restoration>
+      <main id="_main" class="content container" role="main">
+        {% include page-style.html %}
+        {{ content }}
+      </main>
+
+      {% include sidebar.html %}
+    </y-push-state>
+
+    {% include scripts.html %}
+  </body>
+</html>
