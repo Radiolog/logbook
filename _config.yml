@@ -15,9 +15,9 @@ url:                 https://mxbu.github.io
 
 # Set to '' in case of hosting on GitHub pages,
 # i.e. `http://<username>.github.io`
-baseurl:             /logbook
+baseurl:             /recordsblog
 
-title:               logbooks
+title:               Logbook
 
 # Pagination
 paginate:            5
