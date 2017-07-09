@@ -21,4 +21,4 @@ User-agent: *
     Disallow:
   {% endif %}
  {% endif %}
-Sitemap: {{ site.url }}/recordsblog/atom.xml
+Sitemap: {{ site.url }}/logbook/atom.xml
