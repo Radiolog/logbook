@@ -9,4 +9,4 @@ title: About
 {% endcomment %}
 {% include about-short.html author=site.author %}
 
-This blog is more like the records of my way to learn programming, especially in python. 
+This blog is more like the logbook of my way to learn programming, especially in python. 
