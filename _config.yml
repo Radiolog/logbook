@@ -11,13 +11,13 @@ permalink:           pretty
 production:          true
 
 # Setup
-url:                 https://burrim.github.io
+url:                 https://mxbu.github.io
 
 # Set to '' in case of hosting on GitHub pages,
 # i.e. `http://<username>.github.io`
-baseurl:             /recordsblog
+baseurl:             /logbook
 
-title:               records
+title:               logbook
 
 # Pagination
 paginate:            5
@@ -42,7 +42,7 @@ load_google_fonts:   'Roboto+Slab:700|Noto+Serif:400,400italic,700,700italic'
 
 # About yourself
 author:
-  name:              'Burrim'
+  name:              'mxbu'
 
   # This photo will be used in the about section
   photo:             
@@ -80,7 +80,7 @@ author:
     # pinterest:       _username_
     # foursquare:      _number_
     # yelp:            _string_
-     github:          burrim
+     github:          mxbu
     # stackoverflow:   _number_/_username_
     # npm:             _username_
     # hackernews:      _username_
@@ -91,13 +91,13 @@ author:
     # delicious:       _username_
     # stumbleupon:     _username_
     # paypal:          _username_
-     rss:              recordsblog/atom.xml
+     rss:              logbook/atom.xml
 
 # Remove to disable Google Anaylics
 google_analytics_id: 'UA-87747889-5'
 
 # Setting a disqus subdomain will enable the comment section
-disqus:              recordsblog
+disqus:              logbook
 
 exclude:             [node_modules, package.json]
 
