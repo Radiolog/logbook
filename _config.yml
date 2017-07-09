@@ -15,7 +15,7 @@ url:                 https://mxbu.github.io
 
 # Set to '' in case of hosting on GitHub pages,
 # i.e. `http://<username>.github.io`
-baseurl:             /recordsblog
+baseurl:             /logbook
 
 title:               Logbook
 
@@ -80,7 +80,7 @@ author:
     # pinterest:       _username_
     # foursquare:      _number_
     # yelp:            _string_
-     github:           mxbu
+    # github:           mxbu
     # stackoverflow:   _number_/_username_
     # npm:             _username_
     # hackernews:      _username_
@@ -91,7 +91,7 @@ author:
     # delicious:       _username_
     # stumbleupon:     _username_
     # paypal:          _username_
-     rss:              logbook/atom.xml
+    # rss:              logbook/atom.xml
 
 # Remove to disable Google Anaylics
 google_analytics_id: 'UA-87747889-5'
