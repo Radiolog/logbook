@@ -6,7 +6,7 @@ comments: true
 date:  2016-11-25 14:25:38
 description: This post shows how to convert a jupyter notebook to a jekyll blog post.
 ---
-While writing the [last blog post](https://burrim.github.io/recordsblog/2016/11/19/optimization/), i was wondering wether it's possible to convert a whole jupyter notebook to a jekyll blog post. So, I googled and found a good post on [this blog](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), which suggests to use the command `nbconvert` to convert the notebook to a markdown file . It's a very easy and convenient way, although there are some issues which let me digging deeper into this topic and finally were the reason for me not to choose this way to convert my notebooks. But later more on that.
+While writing the [last blog post](https://mxbu.github.io/logbook/2016/11/19/optimization/), i was wondering wether it's possible to convert a whole jupyter notebook to a jekyll blog post. So, I googled and found a good post on [this blog](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), which suggests to use the command `nbconvert` to convert the notebook to a markdown file . It's a very easy and convenient way, although there are some issues which let me digging deeper into this topic and finally were the reason for me not to choose this way to convert my notebooks. But later more on that.
 
 If you have the following jupyter notebook called [`nbexample.ipynb`](https://github.com/mxbu/logbook/blob/gh-pages/blog-notebooks/nbexample.ipynb) and want to convert it, you only need to run the command
 
@@ -129,7 +129,7 @@ axes[3].set_title("fill_between");
 show(fig)
 ```
 
-![png](/recordsblog/public/img/nbexample/image1.png)
+![png](/logbook/public/img/nbexample/image1.png)
 
 
 ```python
@@ -167,7 +167,7 @@ What I was missing in the above conversion were the classical `In [1]:` and `Out
 ```
 This means I can get at the cells in the notebook, and I can easily convert the `.ipynb`- file to a `.md`-file. I found a [`ipynb_to_jekyll.py` on GitHub](https://gist.github.com/ewjoachim/570022bb7a08403cbe525fe82bd6d3e4), which I had to edit a few to satisfy my needs. Running `$ python ipynb_to_jekyll.py nbexample.ipynb` in the terminal creates/overwrites the relevant `nbexample.md` file and stores images in a folder. What follows is the code I used to convert my notebooks, if you cannot see the embedded gists, please <a  style="box-sizing: border-box; cursor: pointer; background: #f0f0f0;" onclick="PageReload()">
 <span>refresh the page</span>
-</a>  or you can have [a look at the gist on GitHub](https://gist.github.com/burrim/a4a7a4e8d1a4dbb6439365ca0fb9ad25):
+</a>  or you can have [a look at the gist on GitHub](https://gist.github.com/mxbu/a4a7a4e8d1a4dbb6439365ca0fb9ad25):
 
 <a class="button" style="box-sizing: border-box; cursor: pointer; background: #f0f0f0; border: 2px solid; " onclick="hideshow()">
 <span>show/hide gists</span>
@@ -193,7 +193,7 @@ function hideshow() {
 </script>
 
 
-<script src="https://gist.github.com/burrim/a4a7a4e8d1a4dbb6439365ca0fb9ad25.js"></script>
+<script src="https://gist.github.com/mxbu/a4a7a4e8d1a4dbb6439365ca0fb9ad25.js"></script>
 
 At the end there was one main reason to choose the 2nd approach, even though the first approach offers the possibility to define a template for the conversion. If you're interested in the latter, [this gist might be something for you](https://gist.github.com/dkmehrmann/3fd9e8b89a6e442fdc8787a4c1dbf4f2/).
 

@@ -665,7 +665,7 @@ margin: auto;
 <div class="plotdiv" id="bfa5134b-d217-48cb-b87b-e3a4ff3608d7"></div>
 </div>
 
-<script>loadJSDeferred('/recordsblog/public/js/optimization-bokeh/bokeh02.js');</script>
+<script>loadJSDeferred('/logbook/public/js/optimization-bokeh/bokeh02.js');</script>
 </body>
 </html>
 
