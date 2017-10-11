@@ -3,6 +3,7 @@ layout: post
 title: Linda and the Conjunction Fallacy
 tags: [random]
 description: Do you know Linda?
+comments: true
 date:  2017-02-21 14:25:38
 ---
 
