@@ -97,7 +97,7 @@ author:
 google_analytics_id: 'UA-102344496-4'
 
 # Setting a disqus subdomain will enable the comment section
-#disqus:              
+disqus: logbook-1              
 
 exclude:             [node_modules, package.json]
 
