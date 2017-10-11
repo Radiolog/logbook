@@ -10,8 +10,8 @@
       this.page.url = '{{ site.url }}{{ site.baseurl }}{{ post.url }}';
       this.page.identifier = '{{ post.id }}';
     };
-
-    var loaded = true;
+      
+    var loaded = false;
     var disqus_thread_offsetTop = document.getElementById('disqus_thread').offsetTop;
 
     window.addEventListener('scroll', function (e) {
