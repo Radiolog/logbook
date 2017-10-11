@@ -1,5 +1,4 @@
 ---
-
 layout: post
 title: Forecasting Swiss GDP Growth with Statsmodels
 tags: [economics, python, jupyter]
